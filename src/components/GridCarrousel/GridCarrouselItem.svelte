@@ -17,6 +17,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    min-width: 200px;
 
     img {
       object-fit: cover;
@@ -77,7 +78,7 @@
   }
 </style>
 
-<div class={`item ${item.size}`}>
+<div class={`item ${item.size ? item.size : ''}`}>
   {#if item.title}
     <span>{@html item.title}</span>
   {/if}

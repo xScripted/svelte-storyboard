@@ -4,6 +4,8 @@
 
   import AccordionGallery from './components/AccordionGallery.svelte'
   import { accordionGalleryItems } from './dataComponents/AccordionGallery'
+
+  import BackdropCard from './components/BackdropCard.svelte'
 </script>
 
 <style lang="scss">
@@ -46,5 +48,10 @@
   <section>
     <h2>AccordionGallery.svelte</h2>
     <AccordionGallery items={accordionGalleryItems} />
+  </section>
+
+  <section>
+    <h2>BackdropCard.svelte</h2>
+    <BackdropCard />
   </section>
 </div>

@@ -21,7 +21,7 @@
         position: absolute;
         opacity: 0;
         color: white;
-        height: 100%;
+        height: 430px;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;

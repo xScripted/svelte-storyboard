@@ -5,7 +5,7 @@
 </script>
 
 <style lang="scss">
-  .item {
+  .grid-carrousel-item {
     position: relative;
     background-color: rgb(241, 241, 241);
     width: 100%;
@@ -17,7 +17,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    min-width: 200px;
+    border: 2px solid red;
 
     img {
       object-fit: cover;
@@ -62,23 +62,10 @@
         opacity: 1;
       }
     }
-
-    &.big {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    &.broad {
-      grid-column: span 2;
-    }
-
-    &.long {
-      grid-row: span 2;
-    }
   }
 </style>
 
-<div class={`item ${item.size ? item.size : ''}`}>
+<div class="grid-carrousel-item">
   {#if item.title}
     <span>{@html item.title}</span>
   {/if}

@@ -4,48 +4,67 @@
 
   export let items: IGridCarrouselItem[] = []
   export let infinite: boolean = true
+
+  const totalWidth = `-${items.length * 200}px`
 </script>
 
 <style lang="scss">
-  $gap: 0px;
+  $gap: 20px;
 
   .grid-carrousel {
     display: grid;
     height: 400px;
     min-width: 1170px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: minmax(200px, 1fr);
+    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(auto-fill, 200px);
     grid-auto-flow: column;
     gap: $gap;
-    padding: 20px;  
-    //animation: scroll 15s linear infinite;
-
+    animation: scroll 5s linear infinite;
 
     &:hover {
       animation-play-state: paused;
     }
 
-    a {
-      display: contents;
+    a,
+    div {
+      min-width: 200px;
+    }
+
+    .big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .broad {
+      grid-column: span 2;
+    }
+
+    .long {
+      grid-row: span 2;
     }
   }
 
-
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100vw)}
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(--total-width);
+    }
   }
 </style>
 
-<div class="grid-carrousel">
+<div class="grid-carrousel" style="--total-width: {totalWidth}">
   {#each infinite ? Array(2) : Array(1) as _}
     {#each items as item}
       {#if item.link}
-        <a href={item.link} title={item.hover.title} target={item.target ? '_blank' : ''}>
+        <a class={`${item.size ? item.size : ''}`} href={item.link} title={item.hover.title} target={item.target ? '_blank' : ''}>
           <GridCarrouselItem {item} />
         </a>
       {:else}
-        <GridCarrouselItem {item} />
+        <div class={`${item.size ? item.size : ''}`}>
+          <GridCarrouselItem {item} />
+        </div>
       {/if}
     {/each}
   {/each}

@@ -6,6 +6,7 @@
   import { accordionGalleryItems } from './dataComponents/AccordionGallery'
 
   import BackdropCard from './components/BackdropCard.svelte'
+  import AuroraText from './components/AuroraText.svelte'
 </script>
 
 <style lang="scss">
@@ -67,6 +68,13 @@
       <BackdropCard />
       <BackdropCard />
       <BackdropCard />
+    </div>
+  </section>
+
+  <section>
+    <h2>AuroraText.svelte</h2>
+    <div class="content">
+      <AuroraText title="Hazme un bizum" />
     </div>
   </section>
 </div>

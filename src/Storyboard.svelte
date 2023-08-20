@@ -33,6 +33,12 @@
       border-radius: 8px;
       overflow: hidden;
       height: fit-content;
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 </style>
@@ -42,16 +48,25 @@
 
   <section>
     <h2>GridCarrousel.svelte (In progress)</h2>
-    <GridCarrousel items={gridCarrouselItems} />
+    <div class="content">
+      <GridCarrousel items={gridCarrouselItems} />
+    </div>
   </section>
 
   <section>
     <h2>AccordionGallery.svelte</h2>
-    <AccordionGallery items={accordionGalleryItems} />
+    <div class="content">
+      <AccordionGallery items={accordionGalleryItems} />
+    </div>
   </section>
 
   <section>
     <h2>BackdropCard.svelte</h2>
-    <BackdropCard />
+    <div class="content">
+      <BackdropCard />
+      <BackdropCard />
+      <BackdropCard />
+      <BackdropCard />
+    </div>
   </section>
 </div>

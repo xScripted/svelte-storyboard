@@ -71,19 +71,31 @@
     </div>
   </section>
 
-  <section>
-    <h2>AuroraText.svelte</h2>
-    <div class="content">
-      <AuroraText title="Hazme un bizum" />
-    </div>
-  </section>
-
   <section
     style="background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg')"
   >
     <h2>BurgerMenu.svelte</h2>
     <div class="content" style="align-items: flex-start; height: 600px; ">
       <BurgerMenu />
+    </div>
+  </section>
+
+  <section class="text-effects">
+    <h2>Text Effects</h2>
+    <div class="content" style="align-items: flex-start;">
+      <div id="Reveal Effect" style="display: flex;">
+        <div class="text-showup">Check this</div> 
+        <div class="text-reveal"> 
+          <span class="text-slidein">amazing Reveal Effect</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AuroraText.svelte</h2>
+    <div class="content">
+      <AuroraText title="Hazme un bizum" />
     </div>
   </section>
 </div>

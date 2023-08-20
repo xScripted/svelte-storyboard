@@ -1,0 +1,75 @@
+.text-effects * {
+  font-size: 25px !important;
+}
+
+.text-showup {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: showup 7s infinite;
+}
+
+.text-reveal {
+  width: 0px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: reveal 7s infinite;
+}
+
+.text-slidein {
+  margin-left: -355px;
+  padding-left: 8px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: 355px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 355px;
+  }
+}

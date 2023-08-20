@@ -14,7 +14,6 @@
 
     &:hover {
       transition: 2s ease, transform 0.3s ease;
-
       transform: translateY(-20px);
 
       .a {

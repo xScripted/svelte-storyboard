@@ -6,6 +6,7 @@
   import BackdropCard from './components/BackdropCard.svelte'
   import AuroraText from './components/AuroraText.svelte'
   import BurgerMenu from './components/BurgerMenu.svelte'
+  import HeroBigTitle from './components/HeroBigTitle.svelte'
 </script>
 
 <style lang="scss">
@@ -84,8 +85,8 @@
     <h2>Text Effects</h2>
     <div class="content" style="align-items: flex-start;">
       <div id="Reveal Effect" style="display: flex;">
-        <div class="text-showup">Check this</div> 
-        <div class="text-reveal"> 
+        <div class="text-showup">Check this</div>
+        <div class="text-reveal">
           <span class="text-slidein">amazing Reveal Effect</span>
         </div>
       </div>
@@ -96,6 +97,14 @@
     <h2>AuroraText.svelte</h2>
     <div class="content">
       <AuroraText title="Hazme un bizum" />
+    </div>
+  </section>
+
+  <section style="padding: 0px;">
+    <h2>HeroBigTitle.svelte</h2>
+
+    <div class="content">
+      <HeroBigTitle />
     </div>
   </section>
 </div>

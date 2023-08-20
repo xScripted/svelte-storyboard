@@ -17,7 +17,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid red;
 
     img {
       object-fit: cover;

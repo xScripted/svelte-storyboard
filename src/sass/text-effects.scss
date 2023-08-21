@@ -17,6 +17,10 @@
   animation: reveal 7s infinite;
 }
 
+.text-reveal-up {
+  animation: revealUp 1s infinite;
+}
+
 .text-slidein {
   margin-left: -355px;
   padding-left: 8px;
@@ -71,5 +75,16 @@
   100% {
     opacity: 0;
     width: 355px;
+  }
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }

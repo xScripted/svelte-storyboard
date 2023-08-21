@@ -147,11 +147,11 @@
     </div>
     <div class="logo">BurgerMenu.svelte</div>
     <div class="menu-items">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">about</a></li>
-      <li><a href="#">blogs</a></li>
-      <li><a href="#">portfolio</a></li>
-      <li><a href="#">contact</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">about</a></li>
+      <li><a href="/">blogs</a></li>
+      <li><a href="/">portfolio</a></li>
+      <li><a href="/">contact</a></li>
     </div>
   </div>
 </nav>

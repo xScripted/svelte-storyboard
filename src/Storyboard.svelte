@@ -7,11 +7,19 @@
   import AuroraText from './components/AuroraText.svelte'
   import BurgerMenu from './components/BurgerMenu.svelte'
   import HeroBigTitle from './components/HeroBigTitle.svelte'
+  import RatingStars from './components/RatingStars.svelte'
+  import Faqs from './components/Faqs.svelte'
+  import Modal from './components/Modal.svelte'
+  import Footer from './components/Footer.svelte'
+  import Slider from './components/Slider.svelte'
 </script>
 
 <style lang="scss">
+  @import './sass/text-effects.scss';
+
   .storyboard {
     padding: 20px;
+
     .storyboard-title {
       font-size: 60px;
       font-weight: bold;
@@ -21,25 +29,29 @@
     }
 
     h2 {
-      padding: 20px 0;
+      padding: 20px;
       font-size: 20px;
       font-weight: bold;
       text-align: center;
+      border-bottom: 2px solid black;
+      background-color: rgb(223, 223, 223);
     }
 
     section {
       position: relative;
       border: 2px solid black;
-      padding: 20px;
-      margin: 50px 0;
+      margin: 200px 0;
       border-radius: 8px;
       overflow: hidden;
       height: fit-content;
 
       .content {
+        min-height: 50px;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: white;
       }
     }
   }
@@ -72,24 +84,26 @@
     </div>
   </section>
 
-  <section
-    style="background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg')"
-  >
+  <section>
     <h2>BurgerMenu.svelte</h2>
-    <div class="content" style="align-items: flex-start; height: 600px; ">
+    <div
+      class="content"
+      style="align-items: flex-start; height: 600px; background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg'); background-attachment: fixed;"
+    >
       <BurgerMenu />
     </div>
   </section>
 
   <section class="text-effects">
     <h2>Text Effects</h2>
-    <div class="content" style="align-items: flex-start;">
+    <div class="content" style="flex-direction: column; gap: 40px; padding: 20px;">
       <div id="Reveal Effect" style="display: flex;">
         <div class="text-showup">Check this</div>
         <div class="text-reveal">
           <span class="text-slidein">amazing Reveal Effect</span>
         </div>
       </div>
+      <div class="text-reveal-up">Reveal Up</div>
     </div>
   </section>
 
@@ -101,10 +115,55 @@
   </section>
 
   <section style="padding: 0px;">
-    <h2>HeroBigTitle.svelte</h2>
+    <h2>HeroBigTitle.svelte (F5)</h2>
 
     <div class="content">
       <HeroBigTitle />
+    </div>
+  </section>
+
+  <section>
+    <h2>Faqs.svelte (In progress)</h2>
+    <div class="content">
+      <Faqs />
+    </div>
+  </section>
+
+  <section>
+    <h2>RatingStars.svelte</h2>
+    <div class="content" style="flex-direction: column;">
+      <RatingStars stars={0} />
+      <RatingStars stars={0.5} />
+      <RatingStars stars={1} />
+      <RatingStars stars={1.5} />
+      <RatingStars stars={2} />
+      <RatingStars stars={2.5} />
+      <RatingStars stars={3} />
+      <RatingStars stars={3.5} />
+      <RatingStars stars={4} />
+      <RatingStars stars={4.5} />
+      <RatingStars stars={5} />
+    </div>
+  </section>
+
+  <section>
+    <h2>Modal.svelte (In progress)</h2>
+    <div class="content">
+      <Modal />
+    </div>
+  </section>
+
+  <section>
+    <h2>Footer.svelte (In progress)</h2>
+    <div class="content">
+      <Footer />
+    </div>
+  </section>
+
+  <section>
+    <h2>Slider.svelte (In progress)</h2>
+    <div class="content">
+      <Slider />
     </div>
   </section>
 </div>

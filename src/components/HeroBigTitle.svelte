@@ -2,15 +2,13 @@
   .hero-big-title {
     height: 100vh;
     width: 100%;
-    border: 2px solid rgb(255, 255, 255);
 
     img {
       position: absolute;
       width: 100%;
       height: 100%;
-      z-index: -1;
       object-fit: cover;
-      opacity: 0.5;
+      opacity: 0.2;
     }
 
     h1 {

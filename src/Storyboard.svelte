@@ -16,6 +16,7 @@
 
 <style lang="scss">
   @import './sass/text-effects.scss';
+  @import './sass/buttons.scss';
 
   .storyboard {
     padding: 20px;
@@ -104,6 +105,13 @@
         </div>
       </div>
       <div class="text-reveal-up">Reveal Up</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="content" style="flex-direction: column; gap: 40px; padding: 20px;">
+      <button class="btn-flip" data-back="Back" data-front="Front"></button>
     </div>
   </section>
 

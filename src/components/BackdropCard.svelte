@@ -51,7 +51,7 @@
         filter: blur(20px);
 
         &.a {
-          background-color: rgba(94, 255, 62, 0.6);
+          background-color: rgba(62, 210, 255, 0.6);
           top: 200px;
           right: 0px;
         }
@@ -63,8 +63,8 @@
         }
 
         &.c {
-          background-color: rgba(255, 0, 170, 0.37);
-          top: -40px;
+          background-color: rgba(255, 251, 0, 0.37);
+          top: 0px;
           right: -50px;
         }
       }

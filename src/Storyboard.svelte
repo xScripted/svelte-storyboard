@@ -12,6 +12,7 @@
   import Modal from './components/Modal.svelte'
   import Footer from './components/Footer.svelte'
   import Slider from './components/Slider.svelte'
+  import Menu from './components/Menu.svelte'
 </script>
 
 <style lang="scss">
@@ -48,6 +49,7 @@
 
       .content {
         min-height: 50px;
+        height: fit-content;
         position: relative;
         display: flex;
         justify-content: center;
@@ -111,7 +113,7 @@
   <section>
     <h2>Buttons</h2>
     <div class="content" style="flex-direction: column; gap: 40px; padding: 20px;">
-      <button class="btn-flip" data-back="Back" data-front="Front"></button>
+      <button class="btn-flip" data-back="Back" data-front="Front" />
     </div>
   </section>
 
@@ -157,7 +159,7 @@
   <section>
     <h2>Modal.svelte (In progress)</h2>
     <div class="content">
-      <Modal />
+      <button>Open modal</button>
     </div>
   </section>
 
@@ -174,4 +176,16 @@
       <Slider />
     </div>
   </section>
+
+  <section>
+    <h2>Menu.svelte (In progress)</h2>
+    <div
+      class="content"
+      style="align-items: flex-start; height: 600px; background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg'); background-attachment: fixed;"
+    >
+      <Menu />
+    </div>
+  </section>
 </div>
+
+<Modal />

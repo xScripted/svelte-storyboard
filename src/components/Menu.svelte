@@ -143,85 +143,94 @@
   }
 
   .menu-mobile {
+    display: none;
     width: 100%;
     height: 60px;
-    background-color: white;
+    z-index: 10;
+
+    .burger-checkbox {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      width: 70px;
+      height: 60px;
+      opacity: 0;
+      z-index: 2;
+    }
 
     .navbar {
       display: flex;
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 
       .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         height: 60px;
       }
 
       .burger {
-        width: 60px;
-        height: 60px;
-        transition-duration: 0.5s;
+        display: flex;
+        flex-direction: column;
+        width: 7%;
+        padding: 10px;
+        padding-right: 20px;
+        padding-top: 12px;
+        cursor: pointer;
 
-        .icon-left,
-        .icon-right {
-          transition-duration: 0.5s;
-          position: absolute;
-          height: 8px;
-          width: 30px;
-          top: 30px;
-          background-color: black;
+        span {
+          background: #7c7c7c;
+          border-radius: 10px;
+          height: 4px;
+          margin: 4px 0;
+          transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
-          left: 0px;
-
-          &:before,
-          &:after {
-            transition-duration: 0.5s;
-            position: absolute;
-            width: 30px;
-            height: 8px;
-            background-color: black;
-            content: '';
-            top: -20px;
+          &:nth-of-type(1) {
+            width: 50%;
           }
 
-          &:after {
-            top: 20px !important;
+          &:nth-of-type(2) {
+            width: 100%;
           }
 
-          &:hover {
-            cursor: pointer;
+          &:nth-of-type(3) {
+            width: 75%;
           }
         }
 
-        .icon-right {
-          left: 30px !important;
+        .burger-checkbox:checked .burger span:nth-of-type(1) {
+          transform-origin: bottom;
+          transform: rotatez(45deg) translate(5px, 0px);
         }
 
-        &.open {
-          .icon-left {
-            transition-duration: 0.5s;
-            background: transparent;
+        .burger-checkbox:checked .burger span:nth-of-type(2) {
+          transform-origin: top;
+          transform: rotatez(-45deg);
+        }
 
-            &:before {
-              transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
-            }
-
-            &:after {
-              transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
-            }
-          }
-
-          .icon-right {
-            transition-duration: 0.5s;
-            background: transparent;
-
-            &:before {
-              transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
-            }
-
-            &:after {
-              transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
-            }
-          }
+        .burger-checkbox:checked .burger span:nth-of-type(3) {
+          transform-origin: bottom;
+          width: 50%;
+          transform: translate(18px, -6px) rotatez(45deg);
         }
       }
+    }
+
+    .burger-checkbox:checked ~ .items {
+      transition: 0.3s ease;
+      transform: translateX(0%);
+    }
+
+    .items {
+      transition: 0.3s ease;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 1);
+      transform: translateX(-100%);
+      z-index: -1;
     }
   }
 
@@ -271,17 +280,37 @@
 </nav>
 
 <nav class="menu-mobile">
+  <input type="checkbox" class="burger-checkbox" />
+
   <div class="navbar">
     <div class="burger">
-      <div class="icon-left" />
-      <div class="icon-right" />
+      <span />
+      <span />
+      <span />
     </div>
 
     <div class="logo">
       <img src="https://empleo.camaravalencia.com/tenancy/assets/images/logo-empresa-default.png" alt="Logo" />
     </div>
-    <div />
   </div>
 
-  <div class="items">as</div>
+  <div class="items">
+    <ul class="main-items">
+      {#each items as item}
+        <li>
+          <a href={item.url} title={item.title}>{item.title}</a>
+
+          {#if item.subitems}
+            <div class="subitems">
+              {#each item.subitems as subitem}
+                <div class="subitem">
+                  <a href={subitem.url} title={subitem.title}>{subitem.title}</a>
+                </div>
+              {/each}
+            </div>
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  </div>
 </nav>

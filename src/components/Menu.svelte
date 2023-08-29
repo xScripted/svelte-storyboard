@@ -1,4 +1,9 @@
 <script lang="ts">
+  const logo = 'https://empleo.camaravalencia.com/tenancy/assets/images/logo-empresa-default.png'
+  const phone = {
+    text: '679 21 60 99',
+    href: 'tel:+34679216099',
+  }
   const items = [
     {
       title: 'Item 1',
@@ -156,6 +161,22 @@
       height: 60px;
       opacity: 0;
       z-index: 2;
+
+      &:checked ~ .navbar span:nth-of-type(1) {
+        transform-origin: bottom;
+        transform: rotatez(45deg) translate(5px, 0px);
+      }
+
+      &:checked ~ .navbar span:nth-of-type(2) {
+        transform-origin: top;
+        transform: rotatez(-45deg);
+      }
+
+      &:checked ~ .navbar span:nth-of-type(3) {
+        transform-origin: bottom;
+        width: 50%;
+        transform: translate(17px, -7px) rotatez(45deg);
+      }
     }
 
     .navbar {
@@ -174,7 +195,7 @@
       .burger {
         display: flex;
         flex-direction: column;
-        width: 7%;
+        width: 70px;
         padding: 10px;
         padding-right: 20px;
         padding-top: 12px;
@@ -199,22 +220,6 @@
             width: 75%;
           }
         }
-
-        .burger-checkbox:checked .burger span:nth-of-type(1) {
-          transform-origin: bottom;
-          transform: rotatez(45deg) translate(5px, 0px);
-        }
-
-        .burger-checkbox:checked .burger span:nth-of-type(2) {
-          transform-origin: top;
-          transform: rotatez(-45deg);
-        }
-
-        .burger-checkbox:checked .burger span:nth-of-type(3) {
-          transform-origin: bottom;
-          width: 50%;
-          transform: translate(18px, -6px) rotatez(45deg);
-        }
       }
     }
 
@@ -228,9 +233,38 @@
       position: absolute;
       width: 100%;
       height: 100vh;
+      padding-top: 20px;
       background-color: rgba(255, 255, 255, 1);
       transform: translateX(-100%);
       z-index: -1;
+
+      .item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 15px;
+
+        a {
+          font-size: 18px;
+        }
+
+        svg {
+          width: 20px;
+        }
+      }
+
+      .subitem {
+        padding: 10px 60px;
+        font-size: 18px;
+        color: rgb(150, 150, 150);
+      }
+
+      .telf {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        font-weight: bold;
+      }
     }
   }
 
@@ -248,7 +282,7 @@
 <nav class="menu">
   <div class="global-wrapper menu-container">
     <div class="logo">
-      <img src="https://empleo.camaravalencia.com/tenancy/assets/images/logo-empresa-default.png" alt="Logo" />
+      <img src={logo} alt="Logo" />
     </div>
 
     <ul class="main-items">
@@ -275,7 +309,7 @@
       {/each}
     </ul>
 
-    <div class="right-items">679 21 60 99</div>
+    <div class="right-items">{phone.text}</div>
   </div>
 </nav>
 
@@ -290,27 +324,35 @@
     </div>
 
     <div class="logo">
-      <img src="https://empleo.camaravalencia.com/tenancy/assets/images/logo-empresa-default.png" alt="Logo" />
+      <img src={logo} alt="Logo" />
     </div>
   </div>
 
   <div class="items">
-    <ul class="main-items">
-      {#each items as item}
-        <li>
-          <a href={item.url} title={item.title}>{item.title}</a>
+    {#each items as item}
+      <div class="item">
+        <svg viewBox="0 0 24 24" class="subitem__icon"
+          ><path
+            fill="#000000"
+            d="M14.83,11.29,10.59,7.05a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41L12.71,12,9.17,15.54a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29l4.24-4.24A1,1,0,0,0,14.83,11.29Z"
+          /></svg
+        >
+        <a href={item.url} title={item.title}>{item.title}</a>
+      </div>
 
-          {#if item.subitems}
-            <div class="subitems">
-              {#each item.subitems as subitem}
-                <div class="subitem">
-                  <a href={subitem.url} title={subitem.title}>{subitem.title}</a>
-                </div>
-              {/each}
+      {#if item.subitems}
+        <div class="subitems">
+          {#each item.subitems as subitem}
+            <div class="subitem">
+              <a href={subitem.url} title={subitem.title}>{subitem.title}</a>
             </div>
-          {/if}
-        </li>
-      {/each}
-    </ul>
+          {/each}
+        </div>
+      {/if}
+    {/each}
+
+    <div class="telf">
+      <a href={phone.href} title={phone.href}>{phone.text}</a>
+    </div>
   </div>
 </nav>

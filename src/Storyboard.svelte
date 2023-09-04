@@ -14,6 +14,7 @@
   import Slider from './components/Slider.svelte'
   import Menu from './components/Menu.svelte'
   import InputTextToLine from './components/InputTextToLine.svelte'
+  import CardFiller from './components/CardFiller.svelte'
 </script>
 
 <style lang="scss">
@@ -63,6 +64,13 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>CardFiller.svelte (in progress)</h2>
+    <div class="content">
+      <CardFiller/>
+    </div>
+  </section>
 
   <section>
     <h2>InputTextToLine.svelte</h2>

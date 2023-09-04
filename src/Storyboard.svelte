@@ -65,7 +65,7 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>InputTextToLine.svelte (in progress)</h2>
+    <h2>InputTextToLine.svelte</h2>
     <div class="content">
       <InputTextToLine title="Name"/>
       <InputTextToLine title="Surname"/>

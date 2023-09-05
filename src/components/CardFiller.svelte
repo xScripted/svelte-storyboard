@@ -31,6 +31,29 @@
       border-radius: 13px;
       background-color: #89ccc5;
       box-shadow: 0px 10px 45px -27px rgba(0, 0, 0, 1);
+      background-image: url(https://i.pinimg.com/originals/83/de/4b/83de4b3706360674108710d4339133f8.jpg);
+      background-size: cover;
+      background-position: center;
+
+      .card-info {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .front,
+        .back {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 20px 30px;
+          border-radius: 15px;
+          overflow: hidden;
+          z-index: 1;
+          backface-visibility: hidden;
+        }
+      }
     }
 
     .info {
@@ -86,7 +109,12 @@
 </style>
 
 <div class="card-filler">
-  <div class="card" />
+  <div class="card">
+    <div class="card-info">
+      <div class="front" />
+      <div class="back" />
+    </div>
+  </div>
   <div class="info">
     <div class="info-inputs">
       <input type="password" class="card-number" />

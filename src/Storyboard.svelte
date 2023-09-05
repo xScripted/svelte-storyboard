@@ -13,6 +13,8 @@
   import Footer from './components/Footer.svelte'
   import Slider from './components/Slider.svelte'
   import Menu from './components/Menu.svelte'
+  import InputTextToLine from './components/InputTextToLine.svelte'
+  import CardFiller from './components/CardFiller.svelte'
 </script>
 
 <style lang="scss">
@@ -62,6 +64,22 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>CardFiller.svelte (in progress)</h2>
+    <div class="content">
+      <CardFiller/>
+    </div>
+  </section>
+
+  <section>
+    <h2>InputTextToLine.svelte</h2>
+    <div class="content">
+      <InputTextToLine title="Name"/>
+      <InputTextToLine title="Surname"/>
+      <InputTextToLine title="Email adress"/>
+    </div>
+  </section>
 
   <section>
     <h2>GridCarrousel.svelte (In progress)</h2>

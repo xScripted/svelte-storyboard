@@ -15,6 +15,8 @@
   import Menu from './components/Menu.svelte'
   import InputTextToLine from './components/InputTextToLine.svelte'
   import CardFiller from './components/CardFiller.svelte'
+  import Slider3d from './components/Slider3d.svelte'
+  import { Slider3dItems } from './dataComponents/Slider3d'
 </script>
 
 <style lang="scss">
@@ -68,16 +70,23 @@
   <section>
     <h2>CardFiller.svelte (in progress)</h2>
     <div class="content">
-      <CardFiller/>
+      <CardFiller />
     </div>
   </section>
 
   <section>
     <h2>InputTextToLine.svelte</h2>
     <div class="content">
-      <InputTextToLine title="Name"/>
-      <InputTextToLine title="Surname"/>
-      <InputTextToLine title="Email adress"/>
+      <InputTextToLine title="Name" />
+      <InputTextToLine title="Surname" />
+      <InputTextToLine title="Email adress" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Slider3d.svelte</h2>
+    <div class="content">
+      <Slider3d slides={Slider3dItems} />
     </div>
   </section>
 

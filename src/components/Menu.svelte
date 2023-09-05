@@ -65,7 +65,7 @@
     align-items: center;
 
     img {
-      height: 100%;
+      height: 80%;
     }
   }
 
@@ -107,7 +107,8 @@
             position: absolute;
 
             margin-top: 10px;
-            padding: 10px;
+            padding: 20px;
+            padding-left: 15px;
             top: 60px;
             min-width: 200px;
             width: fit-content;
@@ -148,6 +149,8 @@
   }
 
   .menu-mobile {
+    top: 0;
+    position: sticky;
     display: none;
     width: 100%;
     height: 60px;
@@ -274,16 +277,16 @@
     }
 
     .menu-mobile {
-      display: block;
+      display: sticky;
     }
   }
 </style>
 
 <nav class="menu">
   <div class="global-wrapper menu-container">
-    <div class="logo">
+    <a class="logo" href="/">
       <img src={logo} alt="Logo" />
-    </div>
+    </a>
 
     <ul class="main-items">
       {#each items as item}
@@ -323,9 +326,9 @@
       <span />
     </div>
 
-    <div class="logo">
+    <a class="logo" href="/">
       <img src={logo} alt="Logo" />
-    </div>
+    </a>
   </div>
 
   <div class="items">

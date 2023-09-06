@@ -3,32 +3,37 @@
 
   export let slides: ISlider3dItem[] = []
 
-  let animation = false
-  let index = 0
+  let animations = true
+  let index = slides.length - 1
+  let paused = false
 
-  let title = ''
-  let description = ''
-  let url = ''
-  let image = ''
+  let title = slides[0].title
+  let description = slides[0].description
+  let image = slides[0].image
+  let url = slides[0].url
 
   const swipeSlide = () => {
-    index = slides.length - 1 === index ? 0 : index + 1
+    if (!paused) {
+      animations = false
 
-    title = slides[index].title
-    description = slides[index].description
-    url = slides[index].url
-    image = slides[index].image
+      setTimeout(() => {
+        index = slides.length - 1 === index ? 0 : index + 1
+
+        title = slides[index].title
+        description = slides[index].description
+        image = slides[index].image
+        url = slides[index].url
+
+        setTimeout(() => (animations = true), 300)
+      }, 100)
+    }
   }
 
   setInterval(() => {
-    animation = false
     swipeSlide()
+  }, 10000)
 
-    setTimeout(() => {
-      animation = true
-    }, 0)
-    console.log(index)
-  }, 4000)
+  swipeSlide()
 </script>
 
 <style lang="scss">
@@ -51,15 +56,42 @@
     }
 
     .slide {
+      transition: opacity 0.1s ease;
       position: relative;
       width: 100%;
       height: 70vh;
       overflow: hidden;
+      opacity: 0;
 
-      &.animation {
+      &.animations {
+        transition: opacity 0.3s ease;
+        opacity: 1;
+
         .bg-title {
-          animation-name: animation;
-          animation-duration: 1s;
+          transition: 7s;
+          left: -30px;
+        }
+
+        .content {
+          &__image {
+            transition: 3s ease;
+            right: 100px;
+            opacity: 1;
+          }
+
+          &__description {
+            transition: 2s ease;
+            transition-delay: 0.3s;
+            margin-left: 20px;
+            opacity: 1;
+          }
+
+          &__cta button {
+            transition: 1.5s ease;
+            transition-delay: 2s;
+            margin-left: 50px;
+            opacity: 1;
+          }
         }
       }
 
@@ -67,12 +99,12 @@
         transition: 1s ease;
         position: absolute;
         top: 0;
-        left: -10px;
+        left: -100px;
         font-weight: bold;
         font-size: 50vh;
         text-transform: uppercase;
         opacity: 0.1;
-        color: rgb(54, 54, 54);
+        color: rgba(54, 54, 54, 0.5);
         white-space: nowrap;
       }
 
@@ -84,6 +116,7 @@
         &__title {
           transition: 1s ease;
           padding: 10px 30px;
+          margin-left: 10px;
           margin-top: 20vh;
           font-size: 30px;
           font-weight: bold;
@@ -94,13 +127,15 @@
           max-width: 400px;
           font-size: 18px;
           color: rgb(73, 73, 73);
+          opacity: 0;
         }
 
         &__image {
-          transition: 0.3s ease;
+          transition: 3s ease-out;
           position: absolute;
           top: 220px;
-          right: 0%;
+          right: -500px;
+          opacity: 0;
           width: 30%;
           min-width: 300px;
           max-width: 400px;
@@ -119,25 +154,20 @@
         &__cta button {
           cursor: pointer;
           transition: 0.3s ease;
-          margin: 30px;
-          padding: 10px 30px;
-          background-color: rgb(186, 255, 232);
+          margin-top: 30px;
+          margin-left: 30px;
+          padding: 15px 30px;
+          background-color: rgb(37, 37, 37);
           border-radius: 8px;
-          box-shadow: 0px 0px 15px 0px rgba(121, 121, 121, 0.2);
+          font-weight: bold;
+          box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.17);
+          color: white;
+          opacity: 0;
 
           &:hover {
             transition: 0.3s ease;
-            background-color: rgb(0, 199, 133);
+            background-color: rgb(0, 133, 88);
           }
-        }
-      }
-
-      @keyframes animation {
-        from {
-          left: -30px;
-        }
-        to {
-          left: 30px;
         }
       }
     }
@@ -147,13 +177,13 @@
 <div class="slider3d">
   <div class="bullet-index">x x x x</div>
 
-  <div class="slide" class:animation>
+  <div class="slide" class:animations>
     <div class="bg-title">{title}</div>
     <div class="content">
       <div class="content__title">{@html title}</div>
       <div class="content__description">{@html description}</div>
       <a href={url} class="content__cta">
-        <button>Me interesa {'>'}</button>
+        <button on:mouseenter={() => (paused = true)} on:mouseleave={() => (paused = false)}>Me interesa {'>'} </button>
       </a>
       <img src={image} class="content__image" alt="example" />
     </div>

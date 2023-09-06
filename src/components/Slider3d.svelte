@@ -12,6 +12,8 @@
   let image = slides[0].image
   let url = slides[0].url
 
+  const delay = 10000
+
   const swipeSlide = () => {
     if (!paused) {
       animations = false
@@ -29,16 +31,15 @@
     }
   }
 
-  setInterval(() => {
-    swipeSlide()
-  }, 10000)
-
-  swipeSlide()
+  let interval = setInterval(() => swipeSlide(), delay)
 
   const goToSlide = (i: number) => {
     index = i - 1
     swipeSlide()
+    clearInterval(interval)
   }
+
+  swipeSlide()
 </script>
 
 <style lang="scss">
@@ -63,18 +64,28 @@
     .bullet-index {
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 50px;
+      padding-top: 30px;
 
       &__item {
         cursor: pointer;
         padding: 10px;
 
+        background-color: transparent;
+        border: none;
+
         img {
+          transition: 0.3s ease;
           height: 25px;
+          opacity: 0.4;
         }
 
         &.active {
           img {
-            filter: drop-shadow(0 0 5px rgba(0, 128, 74, 0.651));
+            transition: 0.3s ease;
+            height: 35px;
+            opacity: 0.8;
           }
         }
       }
@@ -93,7 +104,7 @@
         opacity: 1;
 
         .bg-title {
-          transition: 7s;
+          transition: 10s;
           left: -30px;
         }
 
@@ -122,7 +133,7 @@
         transition: 1s ease;
         position: absolute;
         top: 0;
-        left: -100px;
+        left: -200px;
         font-weight: bold;
         font-size: 50vh;
         text-transform: uppercase;
@@ -169,9 +180,7 @@
           box-shadow: 0px 0px 15px 0px rgba(121, 121, 121, 0.2);
 
           @include notDesktop {
-            left: 0;
-            right: 0;
-            margin: auto;
+            display: none;
           }
         }
 
@@ -211,9 +220,9 @@
 <div class="slider3d">
   <div class="bullet-index">
     {#each slides as slide, i}
-      <div class="bullet-index__item" class:active={i === index} on:click={() => goToSlide(i)}>
+      <button class="bullet-index__item" class:active={i === index} on:click={() => goToSlide(i)}>
         <img src={slide.icon} alt="icon" />
-      </div>
+      </button>
     {/each}
   </div>
 

@@ -34,6 +34,13 @@
   }, 10000)
 
   swipeSlide()
+
+  const goToSlide = (i: number) => {
+    index = i - 1
+    paused = true
+    swipeSlide()
+    setTimeout(() => (paused = false), 5000)
+  }
 </script>
 
 <style lang="scss">
@@ -53,6 +60,26 @@
     width: 200%;
     * {
       border: 1px solid rgba(255, 0, 0, 0);
+    }
+
+    .bullet-index {
+      display: flex;
+      justify-content: center;
+
+      &__item {
+        cursor: pointer;
+        padding: 10px;
+
+        img {
+          height: 25px;
+        }
+
+        &.active {
+          img {
+            filter: drop-shadow(0 0 5px rgba(0, 128, 74, 0.651));
+          }
+        }
+      }
     }
 
     .slide {
@@ -87,9 +114,7 @@
           }
 
           &__cta button {
-            transition: 1.5s ease;
-            transition-delay: 2s;
-            margin-left: 50px;
+            transition: opacity 2s ease, background-color 0.3s ease;
             opacity: 1;
           }
         }
@@ -155,7 +180,7 @@
           cursor: pointer;
           transition: 0.3s ease;
           margin-top: 30px;
-          margin-left: 30px;
+          margin-left: 50px;
           padding: 15px 30px;
           background-color: rgb(37, 37, 37);
           border-radius: 8px;
@@ -175,7 +200,13 @@
 </style>
 
 <div class="slider3d">
-  <div class="bullet-index">x x x x</div>
+  <div class="bullet-index">
+    {#each slides as slide, i}
+      <div class="bullet-index__item" class:active={i === index} on:click={() => goToSlide(i)}>
+        <img src={slide.icon} alt="icon" />
+      </div>
+    {/each}
+  </div>
 
   <div class="slide" class:animations>
     <div class="bg-title">{title}</div>

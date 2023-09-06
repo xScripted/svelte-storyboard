@@ -2,7 +2,7 @@ import type { ISlider3dItem } from '../interfaces/Slider3d'
 
 export const Slider3dItems: ISlider3dItem[] = [
   {
-    icon: '',
+    icon: '/assets/svgs/estate.svg',
     title: 'Comprar propiedades',
     description:
       '¿Quieres comprar una propiedad? <br> <br>Nos encargamos de todo: búsqueda, asesoramiento legal, fiscal e hipotecario, visitas, negociaciones y todas las gestiones relacionadas.',
@@ -11,7 +11,21 @@ export const Slider3dItems: ISlider3dItem[] = [
     url: '/',
   },
   {
-    icon: '',
+    icon: '/assets/svgs/euro-circle.svg',
+    title: 'Vende tu propiedad',
+    description: `Demos transparencia al sector juntos. <br><br>
+      Una cosa son los precios publicados, otros
+      los precios de venta que te explican y,
+      después, los reales: valor escriturado.<br><br>
+      Creemos una base de datos con
+      información verificada por los vecinos del
+      barrio para conocer el mercado real, sin
+      especulaciones y desinformación.`,
+    image: 'https://credexia.com/wp-content/uploads/2021/02/vender-casa.jpg',
+    url: '/',
+  },
+  {
+    icon: '/assets/svgs/map-marker.svg',
     title: 'Base de datos',
     description: `Demos transparencia al sector juntos. <br><br>
       Una cosa son los precios publicados, otros

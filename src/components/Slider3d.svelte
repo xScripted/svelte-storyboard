@@ -39,7 +39,6 @@
     index = i - 1
     paused = true
     swipeSlide()
-    setTimeout(() => (paused = false), 5000)
   }
 </script>
 

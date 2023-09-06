@@ -37,7 +37,6 @@
 
   const goToSlide = (i: number) => {
     index = i - 1
-    paused = true
     swipeSlide()
   }
 </script>
@@ -130,6 +129,7 @@
         opacity: 0.1;
         color: rgba(54, 54, 54, 0.5);
         white-space: nowrap;
+        line-height: 1;
       }
 
       .content {
@@ -141,7 +141,7 @@
           transition: 1s ease;
           padding: 10px 30px;
           margin-left: 10px;
-          margin-top: 20vh;
+          margin-top: 130px;
           font-size: 30px;
           font-weight: bold;
         }
@@ -157,7 +157,7 @@
         &__image {
           transition: 3s ease-out;
           position: absolute;
-          top: 220px;
+          top: 200px;
           right: -500px;
           opacity: 0;
           width: 30%;
@@ -181,12 +181,22 @@
           margin-top: 30px;
           margin-left: 50px;
           padding: 15px 30px;
+          padding-right: 15px;
           background-color: rgb(37, 37, 37);
           border-radius: 8px;
           font-weight: bold;
           box-shadow: -2px 2px 5px 1px rgba(0, 0, 0, 0.17);
           color: white;
           opacity: 0;
+
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          img {
+            transform: translateY(1px);
+            height: 30px;
+          }
 
           &:hover {
             transition: 0.3s ease;
@@ -213,7 +223,9 @@
       <div class="content__title">{@html title}</div>
       <div class="content__description">{@html description}</div>
       <a href={url} class="content__cta">
-        <button on:mouseenter={() => (paused = true)} on:mouseleave={() => (paused = false)}>Me interesa {'>'} </button>
+        <button on:mouseenter={() => (paused = true)} on:mouseleave={() => (paused = false)}
+          >Me interesa <img src="/assets/svgs/angle-right.svg" alt="icon" />
+        </button>
       </a>
       <img src={image} class="content__image" alt="example" />
     </div>

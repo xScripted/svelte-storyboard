@@ -106,7 +106,7 @@
 button {
 grid-column: 1/3;
 margin: 12px;
-margin-top: 20px
+margin-top: 20px;
 height: 35px;
 
 border-radius: 20px;

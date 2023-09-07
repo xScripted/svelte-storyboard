@@ -92,7 +92,7 @@
           grid-column: 1/3;
         }
 
-        button {
+        /*button {
           grid-column: 1/3;
           margin: 12px;
           margin-top: 20px;
@@ -102,8 +102,27 @@
 
           border-radius: 8px;
           border: 0;
-        }
+        }*/
+button {
+grid-column: 1/3;
+margin: 12px;
+margin-top: 20px
+height: 35px;
+
+border-radius: 20px;
+background-color: #E2958C;
+color: white;
+font-size: 1em;
+border: none;
+outline: none;
+cursor: pointer;
+transition: .5s;
+box-shadow: 0 6px 0 #BB1542;
       }
+.button:active {
+box-shadow: none;
+transform: translateY(6px);
+}
     }
   }
 </style>
@@ -121,7 +140,7 @@
       <input type="text" class="name" />
       <input type="month" />
       <input type="text" class="cvv" />
-      <button>Te quierooo {'<3'}</button>
+      <button class="button">Te quierooo {'<3'}</button>
     </div>
   </div>
 </div>

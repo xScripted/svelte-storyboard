@@ -11,10 +11,6 @@
 </script>
 
 <style lang="scss">
-  * {
-    //border: 1px solid red;
-  }
-
   .card-filler {
     position: relative;
     display: flex;
@@ -109,15 +105,15 @@
           margin-top: 20px;
           height: 35px;
 
-          border-radius: 20px;
-          background-color: #e2958c;
+          border-radius: 10px;
+          background-color: #447093;
           color: white;
           font-size: 1em;
           border: none;
           outline: none;
           cursor: pointer;
           transition: 0.5s;
-          box-shadow: 0 6px 0 #bb1542;
+          box-shadow: 0 6px 0 #283464;
         }
 
         .button:active {

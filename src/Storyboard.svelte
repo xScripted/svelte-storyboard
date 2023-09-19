@@ -17,6 +17,7 @@
   import CardFiller from './components/CardFiller.svelte'
   import Slider3d from './components/Slider3d.svelte'
   import { Slider3dItems } from './dataComponents/Slider3d'
+  import BackgroundGradient from './components/BackgroundGradient.svelte'
 </script>
 
 <style lang="scss">
@@ -66,6 +67,13 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>BackgroundGradient.svelte (in progress)</h2>
+    <div class="content">
+      <BackgroundGradient />
+    </div>
+  </section>
 
   <section>
     <h2>CardFiller.svelte (in progress)</h2>

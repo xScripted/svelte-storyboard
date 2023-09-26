@@ -17,7 +17,7 @@
   import CardFiller from './components/CardFiller.svelte'
   import Slider3d from './components/Slider3d.svelte'
   import { Slider3dItems } from './dataComponents/Slider3d'
-  import BackgroundGradient from './components/BackgroundGradient.svelte'
+  import TypingText from './components/TypingText.svelte'
 </script>
 
 <style lang="scss">
@@ -69,9 +69,9 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>BackgroundGradient.svelte (in progress)</h2>
+    <h2>TypingText.svelte (in progress)</h2>
     <div class="content">
-      <BackgroundGradient />
+      <TypingText />
     </div>
   </section>
 

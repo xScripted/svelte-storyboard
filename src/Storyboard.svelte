@@ -1,226 +1,484 @@
-<script lang="ts">
-  import GridCarrousel from './components/GridCarrousel/GridCarrousel.svelte'
-  import { gridCarrouselItems } from './dataComponents/GridCarrousel'
-  import AccordionGallery from './components/AccordionGallery.svelte'
-  import { accordionGalleryItems } from './dataComponents/AccordionGallery'
-  import BackdropCard from './components/BackdropCard.svelte'
-  import AuroraText from './components/AuroraText.svelte'
-  import BurgerMenu from './components/BurgerMenu.svelte'
-  import HeroBigTitle from './components/HeroBigTitle.svelte'
-  import RatingStars from './components/RatingStars.svelte'
-  import Faqs from './components/Faqs.svelte'
-  import Modal from './components/Modal.svelte'
-  import Footer from './components/Footer.svelte'
-  import Slider from './components/Slider.svelte'
-  import Menu from './components/Menu.svelte'
-  import InputTextToLine from './components/InputTextToLine.svelte'
-  import CardFiller from './components/CardFiller.svelte'
-  import Slider3d from './components/Slider3d.svelte'
-  import { Slider3dItems } from './dataComponents/Slider3d'
-  import TypingText from './components/TypingText.svelte'
-</script>
+<script lang="ts"></script>
 
 <style lang="scss">
-  @import './sass/text-effects.scss';
-  @import './sass/buttons.scss';
+  * {
+    border: 1px solid blueviolet;
+  }
 
-  .storyboard {
-    padding: 20px;
+  .image-wave {
+    position: relative;
+    width: 100%;
+    height: 150vh;
 
-    .storyboard-title {
-      font-size: 60px;
-      font-weight: bold;
-      text-align: center;
-      padding: 40px 0;
-      color: rgb(53, 53, 53);
-    }
-
-    h2 {
-      padding: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      border-bottom: 2px solid black;
-      background-color: rgb(223, 223, 223);
-    }
-
-    section {
-      position: relative;
-      border: 2px solid black;
-      margin: 200px 0;
-      border-radius: 8px;
-      overflow: hidden;
-      height: fit-content;
-
-      .content {
-        min-height: 50px;
-        height: fit-content;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
+    /*&:hover {
+      .up-wave {
+        clip-path: polygon(
+          100% 0%,
+          0% 0%,
+          0% 74.29%,
+          1% 74.27%,
+          2% 74.22%,
+          3% 74.14%,
+          4% 74.02%,
+          5% 73.87%,
+          6% 73.69%,
+          7% 73.48%,
+          8% 73.24%,
+          9% 72.96%,
+          10% 72.65%,
+          11% 72.32%,
+          12% 71.95%,
+          13% 71.56%,
+          14% 71.14%,
+          15% 70.69%,
+          16% 70.21%,
+          17% 69.71%,
+          18% 69.19%,
+          19% 68.64%,
+          20% 68.07%,
+          21% 67.48%,
+          22% 66.87%,
+          23% 66.24%,
+          24% 65.59%,
+          25% 64.93%,
+          26% 64.25%,
+          27% 63.55%,
+          28% 62.85%,
+          29% 62.13%,
+          30% 61.41%,
+          31% 60.67%,
+          32% 59.93%,
+          33% 59.18%,
+          34% 58.43%,
+          35% 57.68%,
+          36% 56.93%,
+          37% 56.17%,
+          38% 55.42%,
+          39% 54.67%,
+          40% 53.93%,
+          41% 53.19%,
+          42% 52.46%,
+          43% 51.74%,
+          44% 51.03%,
+          45% 50.33%,
+          46% 49.65%,
+          47% 48.98%,
+          48% 48.32%,
+          49% 47.69%,
+          50% 47.07%,
+          51% 46.47%,
+          52% 45.89%,
+          53% 45.33%,
+          54% 44.79%,
+          55% 44.28%,
+          56% 43.8%,
+          57% 43.34%,
+          58% 42.9%,
+          59% 42.5%,
+          60% 42.12%,
+          61% 41.77%,
+          62% 41.45%,
+          63% 41.16%,
+          64% 40.91%,
+          65% 40.68%,
+          66% 40.49%,
+          67% 40.32%,
+          68% 40.19%,
+          69% 40.1%,
+          70% 40.03%,
+          71% 40%,
+          72% 40.01%,
+          73% 40.04%,
+          74% 40.11%,
+          75% 40.21%,
+          76% 40.35%,
+          77% 40.51%,
+          78% 40.71%,
+          79% 40.94%,
+          80% 41.2%,
+          81% 41.5%,
+          82% 41.82%,
+          83% 42.17%,
+          84% 42.55%,
+          85% 42.96%,
+          86% 43.4%,
+          87% 43.87%,
+          88% 44.36%,
+          89% 44.87%,
+          90% 45.41%,
+          91% 45.97%,
+          92% 46.55%,
+          93% 47.15%,
+          94% 47.78%,
+          95% 48.42%,
+          96% 49.07%,
+          97% 49.75%,
+          98% 50.43%,
+          99% 51.13%,
+          100% 51.85%
+        );
+        transition: 0.8s ease;
       }
+      .down-wave {
+        clip-path: polygon(
+          100% 100%,
+          0% 100%,
+          0% 95.71%,
+          1% 95.7%,
+          2% 95.65%,
+          3% 95.57%,
+          4% 95.45%,
+          5% 95.3%,
+          6% 95.12%,
+          7% 94.91%,
+          8% 94.66%,
+          9% 94.39%,
+          10% 94.08%,
+          11% 93.75%,
+          12% 93.38%,
+          13% 92.99%,
+          14% 92.57%,
+          15% 92.12%,
+          16% 91.64%,
+          17% 91.14%,
+          18% 90.62%,
+          19% 90.07%,
+          20% 89.5%,
+          21% 88.91%,
+          22% 88.3%,
+          23% 87.67%,
+          24% 87.02%,
+          25% 86.35%,
+          26% 85.68%,
+          27% 84.98%,
+          28% 84.28%,
+          29% 83.56%,
+          30% 82.83%,
+          31% 82.1%,
+          32% 81.36%,
+          33% 80.61%,
+          34% 79.86%,
+          35% 79.11%,
+          36% 78.36%,
+          37% 77.6%,
+          38% 76.85%,
+          39% 76.1%,
+          40% 75.36%,
+          41% 74.62%,
+          42% 73.89%,
+          43% 73.17%,
+          44% 72.46%,
+          45% 71.76%,
+          46% 71.08%,
+          47% 70.41%,
+          48% 69.75%,
+          49% 69.11%,
+          50% 68.5%,
+          51% 67.9%,
+          52% 67.32%,
+          53% 66.76%,
+          54% 66.22%,
+          55% 65.71%,
+          56% 65.23%,
+          57% 64.77%,
+          58% 64.33%,
+          59% 63.93%,
+          60% 63.55%,
+          61% 63.2%,
+          62% 62.88%,
+          63% 62.59%,
+          64% 62.34%,
+          65% 62.11%,
+          66% 61.91%,
+          67% 61.75%,
+          68% 61.62%,
+          69% 61.53%,
+          70% 61.46%,
+          71% 61.43%,
+          72% 61.43%,
+          73% 61.47%,
+          74% 61.54%,
+          75% 61.64%,
+          76% 61.77%,
+          77% 61.94%,
+          78% 62.14%,
+          79% 62.37%,
+          80% 62.63%,
+          81% 62.93%,
+          82% 63.25%,
+          83% 63.6%,
+          84% 63.98%,
+          85% 64.39%,
+          86% 64.83%,
+          87% 65.29%,
+          88% 65.78%,
+          89% 66.3%,
+          90% 66.84%,
+          91% 67.4%,
+          92% 67.98%,
+          93% 68.58%,
+          94% 69.2%,
+          95% 69.85%,
+          96% 70.5%,
+          97% 71.18%,
+          98% 71.86%,
+          99% 72.56%,
+          100% 73.27%
+        );
+        transition: 0.8s ease;
+      }
+    }*/
+
+    .image {
+      background-image: url('https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .up-wave {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      clip-path: polygon(
+        100% 0%,
+        0% 0%,
+        0% 52.69%,
+        1% 53.3%,
+        2% 53.89%,
+        3% 54.45%,
+        4% 55%,
+        5% 55.52%,
+        6% 56.01%,
+        7% 56.48%,
+        8% 56.93%,
+        9% 57.34%,
+        10% 57.73%,
+        11% 58.09%,
+        12% 58.42%,
+        13% 58.72%,
+        14% 58.99%,
+        15% 59.23%,
+        16% 59.44%,
+        17% 59.62%,
+        18% 59.76%,
+        19% 59.87%,
+        20% 59.94%,
+        21% 59.99%,
+        22% 60%,
+        23% 59.98%,
+        24% 59.92%,
+        25% 59.83%,
+        26% 59.71%,
+        27% 59.56%,
+        28% 59.37%,
+        29% 59.15%,
+        30% 58.9%,
+        31% 58.62%,
+        32% 58.31%,
+        33% 57.97%,
+        34% 57.6%,
+        35% 57.2%,
+        36% 56.78%,
+        37% 56.32%,
+        38% 55.84%,
+        39% 55.34%,
+        40% 54.81%,
+        41% 54.26%,
+        42% 53.68%,
+        43% 53.09%,
+        44% 52.47%,
+        45% 51.84%,
+        46% 51.19%,
+        47% 50.52%,
+        48% 49.84%,
+        49% 49.15%,
+        50% 48.44%,
+        51% 47.72%,
+        52% 46.99%,
+        53% 46.26%,
+        54% 45.52%,
+        55% 44.77%,
+        56% 44.02%,
+        57% 43.26%,
+        58% 42.51%,
+        59% 41.76%,
+        60% 41.01%,
+        61% 40.26%,
+        62% 39.52%,
+        63% 38.78%,
+        64% 38.05%,
+        65% 37.33%,
+        66% 36.62%,
+        67% 35.93%,
+        68% 35.25%,
+        69% 34.58%,
+        70% 33.93%,
+        71% 33.29%,
+        72% 32.67%,
+        73% 32.08%,
+        74% 31.5%,
+        75% 30.95%,
+        76% 30.42%,
+        77% 29.91%,
+        78% 29.43%,
+        79% 28.97%,
+        80% 28.55%,
+        81% 28.14%,
+        82% 27.77%,
+        83% 27.43%,
+        84% 27.11%,
+        85% 26.83%,
+        86% 26.58%,
+        87% 26.36%,
+        88% 26.17%,
+        89% 26.01%,
+        90% 25.89%,
+        91% 25.8%,
+        92% 25.74%,
+        93% 25.72%,
+        94% 25.72%,
+        95% 25.76%,
+        96% 25.84%,
+        97% 25.95%,
+        98% 26.09%,
+        99% 26.26%,
+        100% 26.46%
+      );
+      transition: 0.8s ease;
+    }
+
+    .down-wave {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      clip-path: polygon(
+        100% 100%,
+        0% 100%,
+        0% 88.4%,
+        1% 89.01%,
+        2% 89.6%,
+        3% 90.17%,
+        4% 90.71%,
+        5% 91.23%,
+        6% 91.73%,
+        7% 92.2%,
+        8% 92.64%,
+        9% 93.06%,
+        10% 93.45%,
+        11% 93.81%,
+        12% 94.14%,
+        13% 94.44%,
+        14% 94.71%,
+        15% 94.95%,
+        16% 95.15%,
+        17% 95.33%,
+        18% 95.47%,
+        19% 95.58%,
+        20% 95.66%,
+        21% 95.7%,
+        22% 95.71%,
+        23% 95.69%,
+        24% 95.64%,
+        25% 95.55%,
+        26% 95.43%,
+        27% 95.27%,
+        28% 95.09%,
+        29% 94.87%,
+        30% 94.62%,
+        31% 94.34%,
+        32% 94.03%,
+        33% 93.69%,
+        34% 93.31%,
+        35% 92.92%,
+        36% 92.49%,
+        37% 92.04%,
+        38% 91.56%,
+        39% 91.05%,
+        40% 90.52%,
+        41% 89.97%,
+        42% 89.4%,
+        43% 88.8%,
+        44% 88.19%,
+        45% 87.55%,
+        46% 86.9%,
+        47% 86.24%,
+        48% 85.55%,
+        49% 84.86%,
+        50% 84.15%,
+        51% 83.43%,
+        52% 82.71%,
+        53% 81.97%,
+        54% 81.23%,
+        55% 80.48%,
+        56% 79.73%,
+        57% 78.98%,
+        58% 78.22%,
+        59% 77.47%,
+        60% 76.72%,
+        61% 75.97%,
+        62% 75.23%,
+        63% 74.49%,
+        64% 73.77%,
+        65% 73.05%,
+        66% 72.34%,
+        67% 71.64%,
+        68% 70.96%,
+        69% 70.29%,
+        70% 69.64%,
+        71% 69.01%,
+        72% 68.39%,
+        73% 67.79%,
+        74% 67.22%,
+        75% 66.66%,
+        76% 66.13%,
+        77% 65.63%,
+        78% 65.14%,
+        79% 64.69%,
+        80% 64.26%,
+        81% 63.86%,
+        82% 63.49%,
+        83% 63.14%,
+        84% 62.83%,
+        85% 62.55%,
+        86% 62.29%,
+        87% 62.07%,
+        88% 61.88%,
+        89% 61.73%,
+        90% 61.6%,
+        91% 61.51%,
+        92% 61.45%,
+        93% 61.43%,
+        94% 61.44%,
+        95% 61.48%,
+        96% 61.55%,
+        97% 61.66%,
+        98% 61.8%,
+        99% 61.97%,
+        100% 62.18%
+      );
+      transition: 0.8s ease;
     }
   }
 </style>
 
-<div class="storyboard">
-  <h1 class="storyboard-title">Storyboard</h1>
-
-  <section>
-    <h2>TypingText.svelte (in progress)</h2>
-    <div class="content">
-      <TypingText />
-    </div>
-  </section>
-
-  <section>
-    <h2>CardFiller.svelte (in progress)</h2>
-    <div class="content">
-      <CardFiller />
-    </div>
-  </section>
-
-  <section>
-    <h2>InputTextToLine.svelte</h2>
-    <div class="content">
-      <InputTextToLine title="Name" />
-      <InputTextToLine title="Surname" />
-      <InputTextToLine title="Email adress" />
-    </div>
-  </section>
-
-  <section>
-    <h2>Slider3d.svelte</h2>
-    <div class="content">
-      <Slider3d slides={Slider3dItems} />
-    </div>
-  </section>
-
-  <section>
-    <h2>GridCarrousel.svelte (In progress)</h2>
-    <div class="content">
-      <GridCarrousel items={gridCarrouselItems} />
-    </div>
-  </section>
-
-  <section>
-    <h2>AccordionGallery.svelte</h2>
-    <div class="content">
-      <AccordionGallery items={accordionGalleryItems} />
-    </div>
-  </section>
-
-  <section>
-    <h2>BackdropCard.svelte</h2>
-    <div class="content">
-      <BackdropCard />
-      <BackdropCard />
-      <BackdropCard />
-      <BackdropCard />
-    </div>
-  </section>
-
-  <section>
-    <h2>BurgerMenu.svelte</h2>
-    <div
-      class="content"
-      style="align-items: flex-start; height: 600px; background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg'); background-attachment: fixed;"
-    >
-      <BurgerMenu />
-    </div>
-  </section>
-
-  <section class="text-effects">
-    <h2>Text Effects</h2>
-    <div class="content" style="flex-direction: column; gap: 40px; padding: 20px;">
-      <div id="Reveal Effect" style="display: flex;">
-        <div class="text-showup">Check this</div>
-        <div class="text-reveal">
-          <span class="text-slidein">amazing Reveal Effect</span>
-        </div>
-      </div>
-      <div class="text-reveal-up">Reveal Up</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Buttons</h2>
-    <div class="content" style="flex-direction: column; gap: 40px; padding: 20px;">
-      <button class="btn-flip" data-back="Back" data-front="Front" />
-    </div>
-  </section>
-
-  <section>
-    <h2>AuroraText.svelte</h2>
-    <div class="content">
-      <AuroraText title="Hazme un bizum" />
-    </div>
-  </section>
-
-  <section style="padding: 0px;">
-    <h2>HeroBigTitle.svelte (F5)</h2>
-
-    <div class="content">
-      <HeroBigTitle />
-    </div>
-  </section>
-
-  <section>
-    <h2>Faqs.svelte (In progress)</h2>
-    <div class="content">
-      <Faqs />
-    </div>
-  </section>
-
-  <section>
-    <h2>RatingStars.svelte</h2>
-    <div class="content" style="flex-direction: column;">
-      <RatingStars stars={0} />
-      <RatingStars stars={0.5} />
-      <RatingStars stars={1} />
-      <RatingStars stars={1.5} />
-      <RatingStars stars={2} />
-      <RatingStars stars={2.5} />
-      <RatingStars stars={3} />
-      <RatingStars stars={3.5} />
-      <RatingStars stars={4} />
-      <RatingStars stars={4.5} />
-      <RatingStars stars={5} />
-    </div>
-  </section>
-
-  <section>
-    <h2>Modal.svelte (In progress)</h2>
-    <div class="content">
-      <button>Open modal</button>
-    </div>
-  </section>
-
-  <section>
-    <h2>Footer.svelte (In progress)</h2>
-    <div class="content">
-      <Footer />
-    </div>
-  </section>
-
-  <section>
-    <h2>Slider.svelte (In progress)</h2>
-    <div class="content">
-      <Slider />
-    </div>
-  </section>
-
-  <section>
-    <h2>Menu.svelte (In progress)</h2>
-    <div
-      class="content"
-      style="align-items: flex-start; height: 600px; background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2023/02/Best-WordPress-landing-page-plugins.jpg'); background-attachment: fixed;"
-    >
-      <Menu />
-    </div>
-  </section>
+<div class="image-wave">
+  <div class="image" />
+  <div class="up-wave" />
+  <div class="down-wave" />
 </div>
-
-<Modal />

@@ -14,10 +14,10 @@
   import Slider from './components/Slider.svelte'
   import Menu from './components/Menu.svelte'
   import InputTextToLine from './components/InputTextToLine.svelte'
-  import CardFiller from './components/CardFiller.svelte'
   import Slider3d from './components/Slider3d.svelte'
   import { Slider3dItems } from './dataComponents/Slider3d'
-  import TypingText from './components/TypingText.svelte'
+  import BigMommaText from './components/BigMommaText.svelte'
+  import SectionsIndex from './components/SectionsIndex.svelte'
 </script>
 
 <style lang="scss">
@@ -67,20 +67,7 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
-
-  <section>
-    <h2>TypingText.svelte (in progress)</h2>
-    <div class="content">
-      <TypingText />
-    </div>
-  </section>
-
-  <section>
-    <h2>CardFiller.svelte (in progress)</h2>
-    <div class="content">
-      <CardFiller />
-    </div>
-  </section>
+  <SectionsIndex />
 
   <section>
     <h2>InputTextToLine.svelte</h2>
@@ -88,6 +75,13 @@
       <InputTextToLine title="Name" />
       <InputTextToLine title="Surname" />
       <InputTextToLine title="Email adress" />
+    </div>
+  </section>
+
+  <section>
+    <h2>BigMommaText.svelte</h2>
+    <div class="content">
+      <BigMommaText />
     </div>
   </section>
 

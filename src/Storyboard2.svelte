@@ -18,6 +18,7 @@
   import { Slider3dItems } from './dataComponents/Slider3d'
   import BigMommaText from './components/BigMommaText.svelte'
   import SectionsIndex from './components/SectionsIndex.svelte'
+  import RectangleSwipe from './components/RectangleSwipe.svelte'
 </script>
 
 <style lang="scss">
@@ -82,6 +83,18 @@
     <h2>BigMommaText.svelte</h2>
     <div class="content">
       <BigMommaText />
+    </div>
+  </section>
+
+  <section>
+    <h2>RectangleSwipe.svelte</h2>
+    <div class="content">
+      <RectangleSwipe
+        color=""
+        title="TRAMITA"
+        text1="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        text2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, enim nesciunt. Delectus ipsum magni facilis voluptatibus nobis, dolores cum blanditiis praesentium error ipsam in dolor esse odit nemo iure libero."
+      />
     </div>
   </section>
 

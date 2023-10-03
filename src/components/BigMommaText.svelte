@@ -5,8 +5,9 @@
 
   onMount(() => {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY)
-      HTMLtitle.style.transform = `translateX(-${window.scrollY}px)`
+      if (HTMLtitle) {
+        HTMLtitle.style.transform = `translateX(-${window.scrollY}px)`
+      }
     })
   })
 </script>
@@ -17,6 +18,7 @@
       @content;
     }
   }
+
   .container {
     height: fit-content;
     grid-template-columns: repeat(3, 1fr);

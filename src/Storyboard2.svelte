@@ -91,6 +91,7 @@
     <div class="content">
       <RectangleSwipe
         color=""
+        left
         title="TRAMITA"
         text1="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
         text2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, enim nesciunt. Delectus ipsum magni facilis voluptatibus nobis, dolores cum blanditiis praesentium error ipsam in dolor esse odit nemo iure libero."

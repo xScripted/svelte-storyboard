@@ -4,6 +4,7 @@
   export let text1: string
   export let text2: string
   export let color: string = '#af7adb'
+  export let left = false
 
   let HTMLrectangle
   let active = false
@@ -36,6 +37,21 @@
     display: flex;
     align-items: center;
 
+    &.left {
+      .rectangle {
+        border-radius: 0 100px 100px 0;
+        transform: translateX(-100%);
+        left: 0;
+      }
+
+      .text {
+        position: absolute;
+        padding-right: 150px;
+        text-align: end;
+        right: 0;
+      }
+    }
+
     .rectangle {
       position: absolute;
       right: 0;
@@ -48,12 +64,13 @@
       transition: 1s ease;
 
       &.active {
-        transform: translateX(0%);
+        transform: translateX(0%) !important;
         transition: 1s ease;
       }
     }
 
     .text {
+      position: absolute;
       z-index: 1;
 
       .text1,
@@ -78,7 +95,7 @@
   }
 </style>
 
-<div class="container">
+<div class="container" class:left>
   <div class="rectangle" bind:this={HTMLrectangle} class:active />
   <div class="text">
     <div class="title">{title}</div>

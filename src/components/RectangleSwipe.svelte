@@ -31,6 +31,12 @@
 <style lang="scss">
   $color: #af7adb;
 
+  @mixin notDesktop {
+    @media (max-width: 1170px) {
+      @content;
+    }
+  }
+
   .container {
     width: 100%;
     height: 100vh;
@@ -91,8 +97,21 @@
         padding-top: 20px;
         font-size: 25px;
       }
+
+      @include notDesktop {
+        margin-left: -125px;
+
+        .text1 {
+          font-size: 40px;
+        }
+
+        .text2 {
+          font-size: 20px;
+        }
+      }
     }
   }
+
 </style>
 
 <div class="container" class:left>

@@ -19,6 +19,7 @@
   import BigMommaText from './components/BigMommaText.svelte'
   import SectionsIndex from './components/SectionsIndex.svelte'
   import RectangleSwipe from './components/RectangleSwipe.svelte'
+  import NavBar from './components/NavBar.svelte'
 </script>
 
 <style lang="scss">
@@ -71,6 +72,13 @@
   <SectionsIndex />
 
   <section>
+    <h2>NavBar.svelte (in progress)</h2>
+    <div class="content">
+      <NavBar />
+    </div>
+  </section>
+
+  <section>
     <h2>InputTextToLine.svelte</h2>
     <div class="content">
       <InputTextToLine title="Name" />
@@ -91,6 +99,7 @@
     <div class="content">
       <RectangleSwipe
         color=""
+        left
         title="TRAMITA"
         text1="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
         text2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, enim nesciunt. Delectus ipsum magni facilis voluptatibus nobis, dolores cum blanditiis praesentium error ipsam in dolor esse odit nemo iure libero."

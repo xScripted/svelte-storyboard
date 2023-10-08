@@ -20,6 +20,7 @@
   import SectionsIndex from './components/SectionsIndex.svelte'
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
+  import Folders from './components/Folders.svelte'
 </script>
 
 <style lang="scss">
@@ -72,7 +73,14 @@
   <SectionsIndex />
 
   <section>
-    <h2>NavBar.svelte (in progress)</h2>
+    <h2>Folders.svelte (in progress)</h2>
+    <div class="content">
+      <Folders />
+    </div>
+  </section>
+
+  <section>
+    <h2>NavBar.svelte</h2>
     <div class="content">
       <NavBar />
     </div>

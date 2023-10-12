@@ -1,5 +1,6 @@
 <script lang="ts">
   export let color: string = '#ae7bdf'
+  export let title: string
   let HTMLfolder
 
   //HTMLfolder.style.backgroundColor = color
@@ -59,6 +60,6 @@
 
 <a href="" class="folder" bind:this={HTMLfolder}>
   <div class="back" />
-  <div class="front" />
+  <div class="front">{title}</div>
   <div class="up" />
 </a>

@@ -1,13 +1,9 @@
 <script lang="ts">
-  export let color: string = '#ae7bdf'
   export let title: string
-  let HTMLfolder
-
-  //HTMLfolder.style.backgroundColor = color
 </script>
 
 <style lang="scss">
-  $color: #d8d5d8;
+  $color: #525252;
 
   .folder {
     display: flex;
@@ -38,28 +34,40 @@
     .front {
       position: absolute;
       z-index: 1;
-      border: 1px solid rgba(163, 163, 163, 0.5);
+      border: 1px solid rgba(163, 163, 163, 0.1);
       width: 170px;
       height: 100px;
       border-radius: 15px;
       top: 25px;
       background-color: $color;
       transition: 0.5s ease;
-      box-shadow: 0px -10px 10px 0px rgba(107, 107, 107, 0.5);
+      box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.2);
+
+      .title {
+        color: white;
+        font-size: 22.5px;
+        font-weight: 600;
+        padding: 10px;
+        text-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+      }
     }
 
     &:hover {
       .front {
         transform: perspective(900px) translateY(5px) rotateX(-35deg) translateZ(0);
-        box-shadow: 0px -20px 15px 0px rgba(107, 107, 107, 0.5);
+        box-shadow: 0px -20px 15px 0px rgba(0, 0, 0, 0.5);
         transition: 0.3s ease;
       }
     }
   }
 </style>
 
-<a href="" class="folder" bind:this={HTMLfolder}>
+<!-- falta animación icono y que se ponga desde fuera-->
+
+<a href="" class="folder">
   <div class="back" />
-  <div class="front">{title}</div>
+  <div class="front">
+    <div class="title">{title}</div>
+  </div>
   <div class="up" />
 </a>

@@ -74,9 +74,9 @@
   <section>
     <h2>Folders.svelte (in progress)</h2>
     <div class="content">
-      <Folders color="" title="Miquel,"/>
-      <Folders color="" title="Te"/>
-      <Folders color="" title="quiero"/>
+      <Folders color="" title="Vender" />
+      <Folders color="" title="Alquilar" />
+      <Folders color="" title="Base de datos" />
     </div>
   </section>
 

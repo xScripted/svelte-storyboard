@@ -75,6 +75,8 @@
     <h2>Folders.svelte (in progress)</h2>
     <div class="content">
       <Folders color="" />
+      <Folders color="" />
+      <Folders color="" />
     </div>
   </section>
 

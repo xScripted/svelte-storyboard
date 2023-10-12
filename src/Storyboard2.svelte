@@ -70,12 +70,11 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
-  <SectionsIndex />
 
   <section>
     <h2>Folders.svelte (in progress)</h2>
     <div class="content">
-      <Folders />
+      <Folders color="" />
     </div>
   </section>
 

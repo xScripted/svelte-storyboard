@@ -15,7 +15,7 @@
     align-items: center;
     height: fit-content;
 
-    margin: 100px;
+    margin: 100px 50px;
 
     .back {
       width: 170px;

@@ -20,7 +20,7 @@
   import SectionsIndex from './components/SectionsIndex.svelte'
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
-  import Folders from './components/Folders.svelte'
+  import Folder from './components/Folders.svelte'
 </script>
 
 <style lang="scss">
@@ -72,11 +72,11 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>Folders.svelte (in progress)</h2>
-    <div class="content">
-      <Folders title="Miquel" />
-      <Folders title="Te quiero" />
-      <Folders title="Mucho" />
+    <h2>Folder.svelte (in progress)</h2>
+    <div class="content" style="background-color: blueviolet;">
+      <Folder title="Miquel" color="" icon="home" />
+      <Folder title="Te quiero" color="" icon="key" />
+      <Folder title="Mucho" color="" icon="home-pin" />
     </div>
   </section>
 

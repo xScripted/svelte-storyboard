@@ -19,7 +19,7 @@
     .back {
       width: 170px;
       height: 110px;
-      border-radius: 15px 15px 50px 50px;
+      border-radius: 12px 12px 50px 50px;
       background-color: $color;
     }
 
@@ -27,7 +27,7 @@
       position: absolute;
       height: 50px;
       width: 75px;
-      border-radius: 15px;
+      border-radius: 12px;
       right: 95px;
       top: -10px;
       background-color: $color;
@@ -39,7 +39,7 @@
       border: 1px solid rgba(163, 163, 163, 0.1);
       width: 170px;
       height: 100px;
-      border-radius: 15px;
+      border-radius: 12px;
       top: 15px;
       background-color: $color;
       transition: 0.5s ease;
@@ -50,7 +50,6 @@
         font-size: 22.5px;
         font-weight: 600;
         padding: 5px 10px;
-        text-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
       }
     }
 
@@ -59,13 +58,14 @@
       z-index: 1;
       top: 20px;
       width: 50px;
+      filter: invert(0.85);
       transition: 0.3s ease;
     }
 
     &:hover {
       .front {
         transform: perspective(900px) translateY(5px) rotateX(-35deg) translateZ(0);
-        box-shadow: 0px -20px 15px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px -20px 15px 0px rgba(0, 0, 0, 0.3);
         transition: 0.3s ease;
       }
 

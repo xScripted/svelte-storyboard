@@ -21,6 +21,7 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
+  import CircleText from './components/CircleText.svelte'
 </script>
 
 <style lang="scss">
@@ -70,6 +71,13 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>CircleText.svelte</h2>
+    <div class="content">
+      <CircleText />
+    </div>
+  </section>
 
   <section>
     <h2>Folder.svelte</h2>

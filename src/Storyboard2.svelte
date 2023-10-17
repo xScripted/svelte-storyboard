@@ -21,7 +21,7 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
-  import CircleText from './components/CircleText.svelte'
+  import Card from './components/Card.svelte'
 </script>
 
 <style lang="scss">
@@ -73,9 +73,20 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>CircleText.svelte</h2>
+    <h2>Card.svelte</h2>
     <div class="content">
-      <CircleText />
+      <Card
+        details="Out of my mind, how many times
+Did I tell you I'm no good at being alone?"
+      />
+      <Card
+        details="Out of my mind, how many times
+Did I tell you I'm no good at being alone?"
+      />
+      <Card
+        details="Out of my mind, how many times
+Did I tell you I'm no good at being alone?"
+      />
     </div>
   </section>
 

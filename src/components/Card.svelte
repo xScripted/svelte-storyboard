@@ -13,7 +13,7 @@
     padding: 50px;
 
     .card {
-      background-image: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg);
+      background-color: rgb(0, 0, 0);
       position: relative;
       overflow: hidden;
       height: 300px;
@@ -21,6 +21,11 @@
       border-radius: 35px;
 
       .content {
+        img {
+          opacity: 0.7;
+          transition: 0.3s ease;
+        }
+
         .info {
           background-color: $color;
           position: absolute;
@@ -54,6 +59,10 @@
           transform: translateY(100px);
           transition: 0.3s ease;
         }
+        img {
+          opacity: 1;
+          transition: 0.3s ease;
+        }
       }
     }
   }
@@ -62,6 +71,7 @@
 <div class="contenedor">
   <div class="card">
     <div class="content">
+      <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg" alt="BGImg" />
       <div class="info">
         <div class="details">{details}</div>
       </div>

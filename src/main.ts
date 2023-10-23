@@ -1,4 +1,4 @@
-import Storyboard from './Storyboard2.svelte'
+import Storyboard from './Storyboard3.svelte'
 
 const app = new Storyboard({
   target: document.getElementById('Storyboard'),

@@ -21,7 +21,7 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
-  import DropAnimation from './components/DropAnimation.svelte'
+  import ContactPopUp from './components/ContactPopUp.svelte'
 </script>
 
 <style lang="scss">
@@ -73,9 +73,9 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>DropAnimation.svelte (in progress)</h2>
+    <h2>ContactPopUp.svelte (in progress)</h2>
     <div class="content">
-      <DropAnimation />
+      <ContactPopUp />
     </div>
   </section>
 

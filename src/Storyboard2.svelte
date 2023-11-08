@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AlgoEnergetico from './components/AlgoEnergetico.svelte'
   import GridCarrousel from './components/GridCarrousel/GridCarrousel.svelte'
   import { gridCarrouselItems } from './dataComponents/GridCarrousel'
   import AccordionGallery from './components/AccordionGallery.svelte'
@@ -10,7 +11,7 @@
   import RatingStars from './components/RatingStars.svelte'
   import Faqs from './components/Faqs.svelte'
   import Modal from './components/Modal.svelte'
-  import Footer from './components/Footer.svelte'
+  //import Footer from './components/Footer.svelte'
   import Slider from './components/Slider.svelte'
   import Menu from './components/Menu.svelte'
   import InputTextToLine from './components/InputTextToLine.svelte'
@@ -21,7 +22,6 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
-  import ContactPopUp from './components/ContactPopUp.svelte'
 </script>
 
 <style lang="scss">
@@ -73,9 +73,9 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>ContactPopUp.svelte (in progress)</h2>
+    <h2>AlgoEnergetico.svelte (in progress)</h2>
     <div class="content">
-      <ContactPopUp />
+      <AlgoEnergetico />
     </div>
   </section>
 
@@ -231,12 +231,12 @@
     </div>
   </section>
 
-  <section>
+  <!--<section>
     <h2>Footer.svelte (In progress)</h2>
     <div class="content">
       <Footer />
     </div>
-  </section>
+  </section>-->
 
   <section>
     <h2>Slider.svelte (In progress)</h2>

@@ -73,7 +73,7 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>AlgoEnergetico.svelte (in progress)</h2>
+    <h2>AlgoEnergetico.svelte</h2>
     <div class="content">
       <AlgoEnergetico />
     </div>

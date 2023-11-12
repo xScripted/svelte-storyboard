@@ -22,6 +22,7 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
+  import Btn from './components/btn.svelte'
 </script>
 
 <style lang="scss">
@@ -71,6 +72,13 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>btn.svelte</h2>
+    <div class="content">
+      <Btn />
+    </div>
+  </section>
 
   <section>
     <h2>AlgoEnergetico.svelte</h2>

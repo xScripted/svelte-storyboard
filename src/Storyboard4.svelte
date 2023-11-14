@@ -221,13 +221,6 @@
             margin-right: 20px;
             font-weight: 600;
           }
-
-          /*.text {
-            text-align: center;
-            grid-column-end: 3;
-            grid-column-start: 1;
-            font-weight: bold;
-          }*/
         }
       }
     }

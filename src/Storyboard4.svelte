@@ -9,6 +9,7 @@
   ]
 
   let galleryMode = false
+  let galleryVisor = false
 </script>
 
 <style lang="scss">

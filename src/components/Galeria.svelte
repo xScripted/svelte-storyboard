@@ -1,6 +1,6 @@
 <script lang="ts">
   export let photos: string[] = []
-  export let photosIndex: number = 0
+  export let i: number = 0
 </script>
 
 <style lang="scss">
@@ -12,14 +12,14 @@
     background-color: rgb(32, 32, 32);
     width: 100%;
     height: 100vh;
-    
+
     z-index: 99;
     top: 0;
 
     .contador {
       position: absolute;
       margin: 0 auto;
-      top: 25px;
+      top: 50px;
       color: white;
       font-size: 15px;
     }
@@ -30,23 +30,23 @@
       max-width: 1000px;
 
       .images {
-      width: 100%;
-      height: 100%;
-      display: flex;
-
-      .image {
         width: 100%;
-        min-width: 500px;
-        
-        img {
-          object-fit: contain;
+        height: 100%;
+        display: flex;
+
+        .image {
           width: 100%;
-          height: 80vh;
+          min-width: 1000px;
+
+          img {
+            object-fit: contain;
+            width: 1000px;
+            height: 80vh;
+          }
         }
       }
     }
-    }
-    
+
     button {
       position: absolute;
       width: 50px;
@@ -64,13 +64,12 @@
     <div class="images">
       {#each photos as photo, index}
         <div class="image">
-          <img src={photo} alt="">
+          <img src={photo} alt="" />
         </div>
       {/each}
     </div>
   </div>
-  <div class="contador">{photosIndex + 1} / {photos.length}</div>
-  <button class="previous" style="left: 75px;"></button>
-  <button class="next" style="right: 75px;"></button>
+  <div class="contador">{i + 1} / {photos.length}</div>
+  <button class="previous" style="left: 75px;" on:click={() => (i = i === 0 ? photos.length - 1 : i - 1)} />
+  <button class="next" style="right: 75px;" on:click={() => (i = i === photos.length - 1 ? 0 : i + 1)} />
 </div>
-

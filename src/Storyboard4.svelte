@@ -1,5 +1,5 @@
 <script lang="ts">
-import Galeria from "./components/Galeria.svelte";
+  import Galeria from './components/Galeria.svelte'
 
   const cards = [
     { text: 'Habitaciones', icon: 'https://cdn-icons-png.flaticon.com/512/90/90011.png', value: 2 },
@@ -272,8 +272,11 @@ import Galeria from "./components/Galeria.svelte";
   </div>
 </div>
 
-<Galeria photos={[
-  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-pKho7gVovW-1200x800.jpg",
-  "https://fotos15.apinmo.com/747/18562708/3-1.jpg",
-  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-Rny61h9xj1-1200x800.jpg",
-  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg"]}/>
+<Galeria
+  photos={[
+    'https://fotos15.apinmo.com/747/18562708/3-1.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-pKho7gVovW-1200x800.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-Rny61h9xj1-1200x800.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg',
+  ]}
+/>

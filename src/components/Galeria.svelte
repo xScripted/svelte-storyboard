@@ -1,6 +1,7 @@
 <script lang="ts">
   export let photos: string[] = []
   export let i: number = 0
+  let X: number = 0
 </script>
 
 <style lang="scss">
@@ -28,6 +29,7 @@
       overflow: hidden;
       width: 50%;
       max-width: 1000px;
+      border-radius: 20px;
 
       .images {
         width: 100%;
@@ -61,8 +63,8 @@
 
 <div class="gallery">
   <div class="image-container">
-    <div class="images">
-      {#each photos as photo, index}
+    <div class="images" style="transform: translateX({-i * 1000}px);">
+      {#each photos as photo}
         <div class="image">
           <img src={photo} alt="" />
         </div>

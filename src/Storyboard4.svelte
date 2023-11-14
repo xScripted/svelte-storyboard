@@ -1,4 +1,6 @@
 <script lang="ts">
+import Galeria from "./components/Galeria.svelte";
+
   const cards = [
     { text: 'Habitaciones', icon: 'https://cdn-icons-png.flaticon.com/512/90/90011.png', value: 2 },
     { text: 'Baños', icon: 'https://cdn-icons-png.flaticon.com/512/3289/3289742.png', value: 3 },
@@ -17,16 +19,6 @@
     background-color: black;
     overflow: hidden;
     transition: 0.3s ease;
-
-    .rectangle {
-      position: absolute;
-      background-color: white;
-      transition: 0.5s ease;
-      width: 100%;
-      height: 20vh;
-      bottom: 0;
-      z-index: 3;
-    }
 
     &.galleryMode {
       height: 100vh;
@@ -258,9 +250,8 @@
       {/each}
     </div>
   </div>
-  <div class="rectangle" />
   <div class="background">
-    <div class="item">
+    <div class="item" style="cursor: pointer;">
       <img src="https://fotos15.apinmo.com/747/18562708/3-1.jpg" alt="" />
     </div>
     <div class="item">
@@ -280,3 +271,9 @@
     </div>
   </div>
 </div>
+
+<Galeria photos={[
+  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-pKho7gVovW-1200x800.jpg",
+  "https://fotos15.apinmo.com/747/18562708/3-1.jpg",
+  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-Rny61h9xj1-1200x800.jpg",
+  "https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg"]}/>

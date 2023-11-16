@@ -30,6 +30,17 @@
             height: 100%;
             background-color: #6f2fb2;
             border-radius: 20px;
+
+            button {
+                width: fit-content;
+                height: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: inherit;
+                border: none;
+                cursor: pointer;
+            }
         }
 
         .add-spent {
@@ -49,16 +60,20 @@
 </style>
 
 <div class="background">
-    <div class="balance">{balance}€</div>
+    <div class="balance">
+        <span>Saldo actual:</span>
+        <div class="saldo">{balance}€</div>
+        <div class="grafico"></div>
+    </div>
     <div class="add-spent">Añadir gasto</div>
     <div class="spent-history">Historial de gastos</div>
     <div class="month">
         <div class="calendar"></div>
         <button class="previous">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
+            <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
         </button>
         <button class="next">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+            <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
         </button>
     </div>
 </div>

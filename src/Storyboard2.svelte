@@ -22,7 +22,7 @@
   import RectangleSwipe from './components/RectangleSwipe.svelte'
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
-  import Galeria from './components/Galeria.svelte'
+  import Calendar from './components/Calendar.svelte'
 </script>
 
 <style lang="scss">
@@ -74,9 +74,9 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>Galeria.svelte</h2>
+    <h2>Calendar.svelte (in progress)</h2>
     <div class="content">
-      <Galeria />
+      <Calendar />
     </div>
   </section>
 

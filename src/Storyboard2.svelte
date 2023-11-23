@@ -23,6 +23,7 @@
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
   import Calendar from './components/Calendar.svelte'
+  import TextGradient from './components/TextGradient.svelte'
 </script>
 
 <style lang="scss">
@@ -77,6 +78,13 @@
     <h2>Calendar.svelte (in progress)</h2>
     <div class="content">
       <Calendar />
+    </div>
+  </section>
+
+  <section>
+    <h2>TextGradient.svelte</h2>
+    <div class="content">
+      <TextGradient />
     </div>
   </section>
 

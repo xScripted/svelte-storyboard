@@ -55,6 +55,10 @@
           transition: 0.2s ease;
           cursor: pointer;
 
+          &.active {
+            opacity: 1;
+          }
+
           img {
             object-fit: cover;
             width: 100%;
@@ -188,7 +192,7 @@
     <div class="index">
       <div class="images">
         {#each photos as photo, index}
-          <button class="image" on:click={() => (i = index)}>
+          <button class="image" on:click={() => (i = index)} class:active={i === index}>
             <img src={photo} alt="" />
           </button>
         {/each}

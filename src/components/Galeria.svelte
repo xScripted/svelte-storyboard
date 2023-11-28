@@ -57,6 +57,7 @@
 
           img {
             object-fit: cover;
+            border-radius: 5px;
             width: 100%;
             height: 100%;
           }
@@ -64,6 +65,10 @@
           &:hover {
             opacity: 1;
             transition: 0.2s ease;
+          }
+
+          &.active {
+            opacity: 1;
           }
         }
       }
@@ -94,6 +99,7 @@
           img {
             object-fit: cover;
             width: 100%;
+            border-radius: 5px;
             height: 100%;
           }
         }
@@ -188,7 +194,7 @@
     <div class="index">
       <div class="images">
         {#each photos as photo, index}
-          <button class="image" on:click={() => (i = index)}>
+          <button class="image" on:click={() => (i = index)} class:active={i === index}>
             <img src={photo} alt="" />
           </button>
         {/each}

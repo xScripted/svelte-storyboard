@@ -1,5 +1,4 @@
-/*import Storyboard from './Storyboard4.svelte'*/
-import Storyboard from './Contacto.svelte'
+import Storyboard from './LOL proyecto/lol.svelte'
 
 const app = new Storyboard({
   target: document.getElementById('Storyboard'),

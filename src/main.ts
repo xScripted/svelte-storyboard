@@ -1,4 +1,4 @@
-import Storyboard from './LOL proyecto/lol.svelte'
+import Storyboard from './Storyboard2.svelte'
 
 const app = new Storyboard({
   target: document.getElementById('Storyboard'),

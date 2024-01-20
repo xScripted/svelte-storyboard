@@ -24,6 +24,7 @@
   import Folder from './components/Folder.svelte'
   import Calendar from './components/Calendar.svelte'
   import TextGradient from './components/TextGradient.svelte'
+  import Opinions from './components/Opinions.svelte'
 </script>
 
 <style lang="scss">
@@ -75,11 +76,18 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
+    <h2>Opinions.svelte (in progress)</h2>
+    <div class="content">
+      <Opinions />
+    </div>
+  </section>
+
+  <!--<section>
     <h2>Calendar.svelte (in progress)</h2>
     <div class="content">
       <Calendar />
     </div>
-  </section>
+  </section>-->
 
   <section>
     <h2>TextGradient.svelte</h2>

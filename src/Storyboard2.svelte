@@ -23,6 +23,7 @@
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
   import Calendar from './components/Calendar.svelte'
+  import BotonHover from './components/BotonHover.svelte'
 </script>
 
 <style lang="scss">
@@ -72,6 +73,13 @@
 
 <div class="storyboard">
   <h1 class="storyboard-title">Storyboard</h1>
+
+  <section>
+    <h2>BotonHover.svelte (in progress)</h2>
+    <div class="content">
+      <BotonHover />
+    </div>
+  </section>
 
   <section>
     <h2>Calendar.svelte (in progress)</h2>

@@ -23,8 +23,6 @@
       { number: emisionesletra === value.letra ? emisionesvalor : '' },
     ]
   })
-
-  console.log(casillas)
 </script>
 
 <style lang="scss">

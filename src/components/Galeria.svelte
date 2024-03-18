@@ -14,6 +14,7 @@
 
   .gallery {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -27,15 +28,57 @@
     .contador {
       position: absolute;
       margin: 0 auto;
-      top: 50px;
+      top: 35px;
       color: white;
       font-size: 20px;
+    }
+
+    .index {
+      overflow: hidden;
+      height: 100px;
+      width: 75%;
+      position: absolute;
+      bottom: 25px;
+
+      .images {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 5px;
+
+        .image {
+          width: 100%;
+          flex: 1;
+          opacity: 0.5;
+          background: none;
+          border: none;
+          transition: 0.2s ease;
+          cursor: pointer;
+
+          img {
+            object-fit: cover;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+          }
+
+          &:hover {
+            opacity: 1;
+            transition: 0.2s ease;
+          }
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
     }
 
     .image-container {
       overflow: hidden;
       width: 100%;
       max-width: 1000px;
+      margin-bottom: 50px;
 
       .images {
         width: 100%;
@@ -56,13 +99,14 @@
           img {
             object-fit: cover;
             width: 100%;
+            border-radius: 5px;
             height: 100%;
           }
         }
       }
     }
 
-    button {
+    .button {
       position: absolute;
       width: 60px;
       height: 60px;
@@ -147,8 +191,17 @@
         {/each}
       </div>
     </div>
+    <div class="index">
+      <div class="images">
+        {#each photos as photo, index}
+          <button class="image" on:click={() => (i = index)} class:active={i === index}>
+            <img src={photo} alt="" />
+          </button>
+        {/each}
+      </div>
+    </div>
     <div class="contador">{i + 1} / {photos.length}</div>
-    <button class="previous" style="left: 75px;" on:click={() => (i = i === 0 ? photos.length - 1 : i - 1)}>
+    <button class="previous button" style="left: 75px;" on:click={() => (i = i === 0 ? photos.length - 1 : i - 1)}>
       <div class="arrow" style="z-index: 99;">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
           <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
@@ -156,13 +209,13 @@
       </div>
       <div class="circle" />
     </button>
-    <button class="next" style="right: 75px;" on:click={() => (i = i === photos.length - 1 ? 0 : i + 1)}>
+    <button class="next button" style="right: 75px;" on:click={() => (i = i === photos.length - 1 ? 0 : i + 1)}>
       <svg class="arrow" style="z-index: 99;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
         <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
       </svg>
       <div class="circle" />
     </button>
-    <button class="close" on:click={() => (closed = true)}>
+    <button class="close button" on:click={() => (closed = true)}>
       <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 15 15">
         <path d="m4.5 4.5l6 6m-6 0l6-6" />
       </svg>

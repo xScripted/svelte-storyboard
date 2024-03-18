@@ -279,5 +279,8 @@
     'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-pKho7gVovW-1200x800.jpg',
     'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-Rny61h9xj1-1200x800.jpg',
     'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg',
+    'https://static0.housfy.com/prod/property-img/741633/741633-housfy-20231109-vygaYYIKT7-1200x800.jpg',
   ]}
 />

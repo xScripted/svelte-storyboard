@@ -8,8 +8,6 @@
   let firstDay = date
 
   date.setDate(date.getDate() + days)
-
-  console.log(date)
 </script>
 
 <style lang="scss">

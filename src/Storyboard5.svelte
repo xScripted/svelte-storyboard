@@ -20,9 +20,17 @@
       height: 100%;
       background-color: #6f2fb2;
       border-radius: 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
 
       grid-column-start: 1;
       grid-column-end: 4;
+
+      .saldo {
+        font-size: 75px;
+        font-weight: bold;
+      }
     }
 
     .month {

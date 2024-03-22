@@ -23,8 +23,40 @@
   import NavBar from './components/NavBar.svelte'
   import Folder from './components/Folder.svelte'
   import Calendar from './components/Calendar.svelte'
+  import BotonHover from './components/BotonHover.svelte'
   import TextGradient from './components/TextGradient.svelte'
   import Opinions from './components/Opinions.svelte'
+  import { onMount } from 'svelte'
+
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1'
+        entry.target.style.transform = 'translateY(0px)'
+      }
+    })
+  }
+
+  const options = {
+    root: null,
+    rootMargin: '100px',
+    threshold: 1,
+
+    //threshold = qué porcentaje de pixeles del componente se tienen que ver para que inicie la animación
+  }
+
+  const observer = new IntersectionObserver(callback, options)
+
+  onMount(() => {
+    const reveals = document.querySelectorAll('[reveal]')
+    reveals.forEach((element: HTMLElement) => {
+      element.style.opacity = '0'
+      element.style.transform = 'translateY(25px)'
+      element.style.transition = 'transform 1s ease, opacity 1s ease'
+      //si el numero no es positivo restregarselo en la cara.
+      observer.observe(element)
+    })
+  })
 </script>
 
 <style lang="scss">
@@ -76,7 +108,14 @@
   <h1 class="storyboard-title">Storyboard</h1>
 
   <section>
-    <h2>Opinions.svelte (in progress)</h2>
+    <h2>BotonHover.svelte (in progress)</h2>
+    <div class="content">
+      <BotonHover />
+    </div>
+  </section>
+
+  <section>
+    <h2>Opinions.svelte</h2>
     <div class="content">
       <Opinions />
     </div>
@@ -96,14 +135,14 @@
     </div>
   </section>
 
-  <section>
+  <section reveal>
     <h2>AlgoEnergetico.svelte</h2>
     <div class="content">
       <AlgoEnergetico />
     </div>
   </section>
 
-  <section>
+  <section reveal>
     <h2>Folder.svelte</h2>
     <div class="content" style="background-color: blueviolet;">
       <Folder title="Venta" color="" icon="home" />
@@ -112,7 +151,7 @@
     </div>
   </section>
 
-  <section>
+  <section reveal>
     <h2>NavBar.svelte</h2>
     <div class="content">
       <NavBar />
